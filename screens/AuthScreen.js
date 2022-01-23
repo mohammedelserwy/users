@@ -64,7 +64,6 @@ const AuthScreen = function (props) {
 
               if (email === 'byron.fields@reqres.in') {
                 dispatch(register(email, password));
-                await AsyncStorage.setItem('password', password);
                
 
                 props.navigation.dispatch(
@@ -75,7 +74,6 @@ const AuthScreen = function (props) {
               }
               else if (email === 'michael.lawson@reqres.in') {
                 dispatch(register(email, password));
-                await AsyncStorage.setItem('password', password);
                
                 props.navigation.dispatch(
                   StackActions.replace('Users'
@@ -85,7 +83,6 @@ const AuthScreen = function (props) {
               }
               else if (email === 'lindsay.ferguson@reqres.in') {
                 dispatch(register(email, password));
-                await AsyncStorage.setItem('password', password);
              
                 props.navigation.dispatch(
                   StackActions.replace('Users'
@@ -95,7 +92,6 @@ const AuthScreen = function (props) {
               }
               else if (email === 'tobias.funke@reqres.in') {
                 dispatch(register(email, password));
-                await AsyncStorage.setItem('password', password);
                
                 props.navigation.dispatch(
                   StackActions.replace('Users'
@@ -105,7 +101,6 @@ const AuthScreen = function (props) {
               }
               else if (email === 'rachel.howell@reqres.in') {
                 dispatch(register(email, password));
-                await AsyncStorage.setItem('password', password);
              
                 props.navigation.dispatch(
                   StackActions.replace('Users'
@@ -115,7 +110,6 @@ const AuthScreen = function (props) {
               }
               else if (email === 'george.edwards@reqres.in') {
                 dispatch(register(email, password));
-                await AsyncStorage.setItem('password', password);
               
                 props.navigation.dispatch(
                   StackActions.replace('Users'
