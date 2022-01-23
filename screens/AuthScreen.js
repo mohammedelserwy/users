@@ -21,7 +21,7 @@ const AuthScreen = function (props) {
   const [signUpMode, setSignUpMode] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [registerState, setRegisterState] = useState(false);
+  
 
   return (
     <View style={styles.view}>
@@ -65,7 +65,7 @@ const AuthScreen = function (props) {
               if (email === 'byron.fields@reqres.in') {
                 dispatch(register(email, password));
                 await AsyncStorage.setItem('password', password);
-                setRegisterState(true);
+               
 
                 props.navigation.dispatch(
                   StackActions.replace('Users'
@@ -76,7 +76,7 @@ const AuthScreen = function (props) {
               else if (email === 'michael.lawson@reqres.in') {
                 dispatch(register(email, password));
                 await AsyncStorage.setItem('password', password);
-                setRegisterState(true);
+               
                 props.navigation.dispatch(
                   StackActions.replace('Users'
 
@@ -86,7 +86,7 @@ const AuthScreen = function (props) {
               else if (email === 'lindsay.ferguson@reqres.in') {
                 dispatch(register(email, password));
                 await AsyncStorage.setItem('password', password);
-                setRegisterState(true);
+             
                 props.navigation.dispatch(
                   StackActions.replace('Users'
 
@@ -96,7 +96,7 @@ const AuthScreen = function (props) {
               else if (email === 'tobias.funke@reqres.in') {
                 dispatch(register(email, password));
                 await AsyncStorage.setItem('password', password);
-                setRegisterState(true);
+               
                 props.navigation.dispatch(
                   StackActions.replace('Users'
 
@@ -106,7 +106,7 @@ const AuthScreen = function (props) {
               else if (email === 'rachel.howell@reqres.in') {
                 dispatch(register(email, password));
                 await AsyncStorage.setItem('password', password);
-                setRegisterState(true);
+             
                 props.navigation.dispatch(
                   StackActions.replace('Users'
 
@@ -116,7 +116,7 @@ const AuthScreen = function (props) {
               else if (email === 'george.edwards@reqres.in') {
                 dispatch(register(email, password));
                 await AsyncStorage.setItem('password', password);
-                setRegisterState(true);
+              
                 props.navigation.dispatch(
                   StackActions.replace('Users'
 
