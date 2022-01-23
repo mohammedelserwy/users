@@ -26,9 +26,13 @@ export const register = function (email, password) {
         );
         const responseBody = await response.json();
 
+const singUpToken = responseBody.token;
 
+        await AsyncStorage.setItem('singUpToken', singUpToken);
+        await AsyncStorage.setItem('singUpEmail', email);
+        await AsyncStorage.setItem('singUpPassword', password);
 
-        console.log(responseBody);
+        
 
         dispatch({ type: Register });
     };
