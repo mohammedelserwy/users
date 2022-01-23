@@ -136,81 +136,60 @@ const AuthScreen = function (props) {
 
             else {
 
-              const storedPassword = await AsyncStorage.getItem('password');
+               const storedEmail = await AsyncStorage.getItem('singUpEmail');
+              const storedPassword = await AsyncStorage.getItem(
+                'singUpPassword',
+              );
+              const storedToken = await AsyncStorage.getItem('singUpToken');
+              console.log(storedPassword);
+              console.log(storedToken);
+              console.log(storedEmail);
 
-              if (!registerState) {
-                Alert.alert('error', 'only defined users succeed loged in', [
-                  { text: 'ok' },
-                ]);
+              if (!storedToken) {
+                Alert.alert(
+                  'error',
+                  `only defined users succeed loged in
+                make sure you register
+                `,
+
+                  [{ text: 'ok' }],
+                );
                 return;
-              }
-              else if (password !== storedPassword) {
-                Alert.alert('error', 'invalid password try again', [
-                  { text: 'ok' },
-                ]);
-                return;
-              }
-              else if (email === 'byron.fields@reqres.in') {
-                dispatch(logIn(email, password));
+              } else if (storedToken) {
+                if (email !== storedEmail) {
+                  Alert.alert(
+                    'error',
+                    `invalid email
+                 
+                  make sure you enter correct email
+                  `,
 
-                props.navigation.dispatch(
-                  StackActions.replace('Users'
+                    [{ text: 'ok' }],
+                  );
+                  return;
+                } else if (password !== storedPassword) {
+                  Alert.alert(
+                    'error',
+                    `invalid password
+                 
+                  
+                  make sure you enter correct password
+                  `,
 
-                  )
-                );
-
-              } else if (email === 'michael.lawson@reqres.in') {
-                dispatch(logIn(email, password));
-
-                props.navigation.dispatch(
-                  StackActions.replace('Users'
-
-                  )
-                );
-
-              } else if (email === 'lindsay.ferguson@reqres.in') {
-                dispatch(logIn(email, password));
-                props.navigation.dispatch(
-                  StackActions.replace('Users'
-
-                  )
-                );
-
-              } else if (email === 'tobias.funke@reqres.in') {
-                dispatch(logIn(email, password));
-
-                props.navigation.dispatch(
-                  StackActions.replace('Users'
-
-                  )
-                );
-
-              } else if (email === 'rachel.howell@reqres.in') {
-                dispatch(logIn(email, password));
-
-                props.navigation.dispatch(
-                  StackActions.replace('Users'
-
-                  )
-                );
-
-              } else if (email === 'george.edwards@reqres.in') {
-                dispatch(logIn(email, password));
-
-                props.navigation.dispatch(
-                  StackActions.replace('Users'
-
-                  )
-                );
-
+                    [{ text: 'ok' }],
+                  );
+                  return;
+                }
               }
 
-              else {
-                Alert.alert('error', 'only defined users succeed loged in', [
-                  { text: 'ok' },
-                ]);
-                return;
-              }
+              dispatch(logIn(email, password));
+
+              props.navigation.dispatch(StackActions.replace('Users'));
+
+
+
+
+
 
             }
 
